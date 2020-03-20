@@ -19,12 +19,12 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :groups, through: :groups_message
+- belongs_to :group
 
 ## groupsテーブル
 |Column|type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :users
 - has_many :messages
@@ -38,12 +38,3 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-## groups_messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :group
--belongs_to :message
